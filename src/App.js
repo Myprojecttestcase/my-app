@@ -1,3 +1,4 @@
+import React from 'react';
 function App(){
   return(
     <>
@@ -9,13 +10,15 @@ function App(){
   )
 }
 function Dec(){
+  let as={backgroundColor :'orange'}
   return(
     <>
+    
     <ul>
-      <li>
+      <li style={{backgroundColor:'red'}}>
         hai
       </li>
-      <li>
+      <li style={as}>
         bye
       </li>
     </ul>
