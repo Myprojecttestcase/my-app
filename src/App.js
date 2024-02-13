@@ -1,28 +1,17 @@
 import React from 'react';
+// import { Dec, Firstform } from './Usestate';
+// import Apps, { Wheather } from './weather';
+// import {Form1} from './form';
+// import { Code } from './boolean';
+// import { Mainpage } from './Main';
+// import { Form } from './forms/form';
+import { Main } from './forms/main';
 function App(){
   return(
     <>
-    <h1 className="text-primary" >
-      hai
-    </h1>
-   <Dec />
+    {/* <Mainpage /> */}
+    <Main/>
     </>
-  )
-}
-function Dec(){
-  let as={backgroundColor :'orange'}
-  return(
-    <>
-    
-    <ul>
-      <li style={{backgroundColor:'red'}}>
-        hai
-      </li>
-      <li style={as}>
-        bye
-      </li>
-    </ul>
-    </>
-  )
+  );
 }
 export {App};
