@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Deletestd, Listall } from "./valu";
+import { Deletestd, Fetchexact, Listall } from "./valu";
 import { Form } from "./form";
 import { Readp } from "./Read";
+import { Updatepage } from "./Update";
 export let Main=()=>{
     
     const[createpage,setCreatepage]=useState(false);
@@ -9,6 +10,8 @@ export let Main=()=>{
     const [readpage, setReadpage] = useState(false);
     const [dpage, setdpage] = useState(false);
     const [position, setPosition] = useState(0);
+    const [updatepage, setUpdatepage] = useState(false);
+    const [obj, setObj] = useState([])
     useEffect(()=>{
         setTempvalues(Listall);
     });
@@ -37,7 +40,14 @@ export let Main=()=>{
             setdpage(false)}}>Back
             </button>
             </div>
-    </>:
+    </>:(updatepage) ?<>
+            <Updatepage who={position} caon={obj} />
+            <div className="row mt-3 justify-content-center"><button className='btn btn-outline-danger col-3'
+            onClick={ () => {
+            setUpdatepage(false)}}>Back
+            </button></div>
+                </>
+                :
     <>
     <div className=' mt-5 row justify-content-center'>
         <div> <h1 className="text-center mb-3 text-info">Register Here</h1></div>
@@ -69,9 +79,14 @@ export let Main=()=>{
                 <td>{element.stdemail}</td>
                 <td>{element.pinNumber}</td>
                 <td>
-                    <button className="btn btn-outline-dark" onClick={()=>{setReadpage(true);setPosition(index)}}>READ</button>
-                    <button className="btn btn-outline-dark">UPDATE</button>
-                    <button className="btn btn-outline-dark" onClick={()=>{setdpage(true);setPosition(index)}}> DELETE</button>
+                    <button className="btn btn-outline-dark me-1" onClick={()=>{setReadpage(true);setPosition(index)}}>READ</button>
+                    <button className="btn btn-outline-dark me-1"  onClick={() => {
+                        setUpdatepage(true);
+                        setPosition(index);
+                        setObj(Fetchexact(element.stdName))
+                    }}>UPDATE
+                    </button>
+                    <button className="btn btn-outline-dark me-1" onClick={()=>{setdpage(true);setPosition(index)}}> DELETE</button>
                 </td>
             </tr>
         </>

@@ -24,3 +24,17 @@ export const Read = (myindex) => {
 export const Deletestd = (myindex) => {
    delete std[myindex];
 }
+export const Fetchexact = (name) => {
+    const temp = std.filter(
+        (datn, index) => {
+            return datn.stdName === name;
+        }
+    )
+    return temp[0];
+}
+
+
+export const replace = (data, pos) => {
+    std[pos] = data;
+    // replace
+}
