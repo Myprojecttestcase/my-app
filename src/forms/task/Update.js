@@ -29,7 +29,6 @@ export let Updatepage1 =(pos)=>{
 }
     let register=()=>{
         if(vaild()){
-        alert(JSON.stringify(std));
         replace(std,pos.who);
         }else{
         alert("Input all fields")}
@@ -38,7 +37,7 @@ export let Updatepage1 =(pos)=>{
         <>
         <div className="row justify-content-center">
         <div className='col-lg-7 col-sm-12  col-md-10'>
-                    <h1 className='text-center fst-italic text-warning'>STUDENT FORM</h1>
+                    <h1 className='text-center  text-warning'>UPDATION FORM</h1>
                     <div className='row'>
                         <div className="col">
                             <label className="form-label">Name : </label>
@@ -58,7 +57,7 @@ export let Updatepage1 =(pos)=>{
                         </div>
                         <div className='row'></div>
                         <div className="col">
-                            <label className="form-label">Number : </label>
+                            <label className="form-label">Age : </label>
                             <input className="form-control" onChange={setter}
                             type="number" name="stdage" value={std.stdage} placeholder="Enter Age"/>
                         </div>

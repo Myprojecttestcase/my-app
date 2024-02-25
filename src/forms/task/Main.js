@@ -33,15 +33,17 @@ export let Main=()=>{
         alert('No User Registered');
         return;
     }
+    let a=0;
     std=JSON.parse(localStorage.getItem("Data"));
     std.map((data,index)=>{if((name1==data.stdName&&pass==data.stdPass)){
     Setpos(index);
     setObj(data);
+    a=1;
     setReadpage(true);
     setCreatepage(false);
     return;
     }
-    if(index==(std.length-1)){alert('Username or Password is wrong');}
+    if(index==(std.length-1)&& a==0){alert('Username or Password is wrong');}
     });
 }
     
@@ -64,7 +66,12 @@ export let Main=()=>{
            </div>
             
             <div className="row justify-content-center">
-            <button className="btn btn-outline-success mt-3 mb-4 col-3" onClick={()=>{Findind(getter.Name,getter.Pass);}} >Login </button>
+            <button className="btn btn-outline-success mt-3 mb-4 col-3" onClick={()=>{Findind(getter.Name,getter.Pass);
+            sete({
+                Name:"",
+                Pass:""
+        });
+            }} >Login </button>
             </div></div>
             
             </div>

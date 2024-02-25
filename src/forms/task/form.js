@@ -33,10 +33,7 @@ export let Form =()=>{
         else{return true;}
 }
     let register=()=>{
-        if(vaild()){
-        alert(JSON.stringify(std));
-        Insertvaluse(std)}else{
-        alert("Input all fields or check password is matched")}
+        Insertvaluse(std);
     }
     return(
         <>
@@ -62,7 +59,7 @@ export let Form =()=>{
                         </div>
                         <div className='row'></div>
                         <div className="col">
-                            <label className="form-label">Number : </label>
+                            <label className="form-label">Age : </label>
                             <input className="form-control" onChange={setter}
                             type="number" name="stdage" value={std.stdage} placeholder="Enter Age"/>
                         </div>
