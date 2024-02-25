@@ -210,7 +210,11 @@ export let Validi=(obj)=>{
     if(obj.stdName===""){alert("User Name Must be Filled"); return false;}
     else if(obj.stdPass===""){alert("Password Must be Filled"); return false;}
     else if(!(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]).{8,}$/).test(obj.stdPass)){
-                alert(" Number should be 1 uppercase ,1 specialcharacter and atleast 1 number and 8 charecter");
+                alert(" Number should be 1 uppercase ,1 specialcharacter and atleast 1 number , Total 8 charecter");
+                return false;
+            }
+    else if(!(/^(?=.*[a-z])(?=.*[A-Z]).{2,}$/).test(obj.stdName)){
+                alert(" Name should be 1 uppercase and atleast 1 number , Total 2 charecter");
                 return false;
             }
     else if(obj.stdCPass===""){alert("User CPassword Must be Filled"); return false;}
