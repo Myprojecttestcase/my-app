@@ -29,10 +29,11 @@ export let Main=()=>{
     }
    const Findind=(name1,pass)=>{
     let std=[""];
-    if(localStorage.getItem("Data") === null){
+    if(localStorage.getItem("Data") === null|| localStorage.getItem("Data") ===""){
         alert('No User Registered');
         return;
     }
+    
     let a=0;
     std=JSON.parse(localStorage.getItem("Data"));
     std.map((data,index)=>{if((name1==data.stdName&&pass==data.stdPass)){
@@ -86,13 +87,13 @@ export let Main=()=>{
         </div>
             <div className=' mt-3 row justify-content-center'>
             <button className='btn btn-outline-secondary col-3'
-                onClick={()=>{setCreatepage(true);setReadpage(false);}}>Back</button>
+                onClick={()=>{setCreatepage(true);setReadpage(false);}}>Log Out</button>
         </div>
             </>:
             (Updatepage)?<><Updatepage1 who={Pos} caon={obj}/>
              <div className=' mt-3 row justify-content-center'>
             <button className='btn btn-outline-danger col-3'
-                onClick={()=>{setCreatepage(true);setUpdatepage(false);}}>Back</button>
+                onClick={()=>{setUpdatepage(false);setCreatepage(true)}}>Back</button>
         </div>
             </>:
             (Deletepage)?
