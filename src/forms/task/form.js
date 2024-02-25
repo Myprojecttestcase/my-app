@@ -50,7 +50,7 @@ export let Form =()=>{
                         <div className="col">
                             <label className="form-label">Password : </label>
                             <input className="form-control" onChange={setter}
-                            type="text" name="stdPass" value={std.stdPass} placeholder="Enter Password"/> 
+                            type="Password" name="stdPass" value={std.stdPass} placeholder="Enter Password"/> 
                         </div>
                         <div className="col">
                             <label className="form-label">Confirm Password : </label>

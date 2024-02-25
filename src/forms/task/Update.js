@@ -28,10 +28,7 @@ export let Updatepage1 =(pos)=>{
         return false}else{return true;}
 }
     let register=()=>{
-        if(vaild()){
         replace(std,pos.who);
-        }else{
-        alert("Input all fields")}
     }
     return(
         <>
@@ -48,12 +45,12 @@ export let Updatepage1 =(pos)=>{
                         <div className="col">
                             <label className="form-label">Password : </label>
                             <input className="form-control" onChange={setter}
-                            type="text" name="stdPass" value={std.stdPass} placeholder="Enter Password"/> 
+                            type="Password" name="stdPass" value={std.stdPass} placeholder="Enter Password"/> 
                         </div>
                         <div className="col">
                             <label className="form-label">Confirm Password : </label>
                             <input className="form-control" onChange={setter}
-                            type="text" name="stdCPass" value={std.stdCPass} placeholder="Confirm Password"/> 
+                            type="Password" name="stdCPass" value={std.stdCPass} placeholder="Confirm Password"/> 
                         </div>
                         <div className='row'></div>
                         <div className="col">

@@ -25,7 +25,7 @@ else{
     std=JSON.parse(localStorage.getItem("Data"));
     
 }   
-    if(Validi(obj)){
+    if(Validi(obj)&&Chec(obj)){
     std.push(obj);
     localStorage.setItem("Data",JSON.stringify(std));}
     
@@ -177,7 +177,7 @@ export const replace = (data, pos) => {
         std=JSON.parse(localStorage.getItem("Data"));
     }
 std[pos] = data;
-    if(Validi(std[pos])){ 
+    if(Validi(std[pos])&&ChecUp(std[pos],pos)){ 
         alert(JSON.stringify(std[pos]));
         localStorage.setItem("Data",JSON.stringify(std));}
     // replace
@@ -224,4 +224,72 @@ export let Validi=(obj)=>{
     else if(obj.stdemail==""){alert("User Email Address Must be Filled"); return false;}
     else if(obj.pinNumber==""){alert("User Pin Number Must be Filled"); return false;}
     return true;
+}
+export let Chec=(obj)=>{
+    var std="";
+    if (localStorage.getItem("Data")==null) {
+        std=[{
+            stdName:"Admin",
+            stdage:21,
+            stdplace:"Trichy",
+            stdPass:"Not",
+            stdCPass:"Not",
+            stdemail:"eshs****@gmail.com",
+            pinNumber:621010
+        },{
+            stdName:"Ad",
+            stdage:21,
+            stdplace:"Trichy",
+            stdPass:"Not",
+            stdCPass:"Not",
+            stdemail:"eshs****@gmail.com",
+            pinNumber:621010
+        }];
+    }
+    else{
+        std=JSON.parse(localStorage.getItem("Data"));
+    }
+
+    var testIt=obj.stdName;
+    var i=0, k=0, indx=[];
+    for ( i=0; i<std.length; i++) 
+      {  if (std[i].stdName === testIt){ indx = [i,k]; break; }   }
+    if(typeof indx[0] == "undefined" || typeof indx[1] == "undefined"){ return true; }
+    else {
+        alert("User Name Is Already Taken");
+        return false;}
+}
+export let ChecUp=(obj,posi)=>{
+    var std="";
+    if (localStorage.getItem("Data")==null) {
+        std=[{
+            stdName:"Admin",
+            stdage:21,
+            stdplace:"Trichy",
+            stdPass:"Not",
+            stdCPass:"Not",
+            stdemail:"eshs****@gmail.com",
+            pinNumber:621010
+        },{
+            stdName:"Ad",
+            stdage:21,
+            stdplace:"Trichy",
+            stdPass:"Not",
+            stdCPass:"Not",
+            stdemail:"eshs****@gmail.com",
+            pinNumber:621010
+        }];
+    }
+    else{
+        std=JSON.parse(localStorage.getItem("Data"));
+    }
+
+    var testIt=obj.stdName;
+    var i=0, k=0, indx=[];
+    for ( i=0; i<std.length; i++) 
+      {  if (std[i].stdName === testIt && i!==posi){ indx = [i,k]; break; }   }
+    if(typeof indx[0] == "undefined" || typeof indx[1] == "undefined"){ return true; }
+    else {
+        alert("User Name Is Already Taken");
+        return false;}
 }
