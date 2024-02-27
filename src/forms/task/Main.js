@@ -52,22 +52,24 @@ export let Main=()=>{
     return(
 
         <>{
-            (createpage)?<> <div className="ms-3"> 
+            (createpage)?<> <div className="row justify-content-center">
+                <div className='col-lg-12 col-sm-7  col-md-10'>
+                <div className="ms-3"> 
             <div className="row justify-content-center " > 
             <div className="col-6 mt-5" style={{border:'2px solid green','borderRadius':'30px'}}>
             <div className="row justify-content-center mt-5" >
             
-            <label className="form-label col-2" >Name : </label>
+            <label className="form-label col-lg-2 col-sm-12" >Name : </label>
                 <input className="form-control col me-3" onChange={setter} type="text" value={getter.Name} name="Name" placeholder="Enter Name"/>
            </div>
             <div className="row mt-2">
-                 <label className="form-label col-2">Password : </label>
+                 <label className="form-label col-lg-2 col-sm-12">Password : </label>
             <input className="form-control col me-3" onChange={setter} type="password" value={getter.Pass} name="Pass" placeholder="Enter password"/>
             
            </div>
             
-            <div className="row justify-content-center">
-            <button className="btn btn-outline-success mt-3 mb-4 col-3" onClick={()=>{Findind(getter.Name,getter.Pass);
+            <div className="row justify-content-center ">
+            <button className="btn btn-outline-success mt-3 mb-4 col-sm-10 col-lg-3" onClick={()=>{Findind(getter.Name,getter.Pass);
             sete({
                 Name:"",
                 Pass:""
@@ -77,7 +79,10 @@ export let Main=()=>{
             
             </div>
             </div>
-            <h5 className="text-center">Don't have an account <p className="text-primary" onClick={()=>{setCreatepage(false);}} >Register here</p></h5></>:
+            <h5 className="text-center">Don't have an account <p className="text-primary" onClick={()=>{setCreatepage(false);}} >Register here</p></h5>
+
+                </div>
+                </div> </>:
             (readpage)?<><Readp who={Pos} />
             <div className=' mt-3 row justify-content-center'>
             <button className='btn btn-outline-warning col-2 me-2'

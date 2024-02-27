@@ -20,7 +20,7 @@ export let Main=()=>{
     {(createpage)?
     <>
     <Form />
-    <div className=' mt-5 row justify-content-center'>
+    <div className=' mt-5 row justify-content-center col-lg-12 col-md-8'>
         <button className='btn btn-outline-danger col-3'
         onClick={() => {
         setCreatepage(false)}}>Cancel

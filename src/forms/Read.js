@@ -13,7 +13,7 @@ export let Readp=(position)=>{
             setstd(Read(position.who))});
     return (
         <>
-            <div className="row justify-content-center mt-5">
+            <div className="row  justify-content-center mt-5">
                 <div className="card col-5">
                     <h1 className="card-title"> MY Record</h1>
                     <p className="card-text">
