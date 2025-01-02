@@ -98,7 +98,7 @@ export let Main=()=>{
             (Updatepage)?<><Updatepage1 who={Pos} caon={obj}/>
              <div className=' mt-3 row justify-content-center'>
             <button className='btn btn-outline-danger col-3'
-                onClick={()=>{setUpdatepage(false);setCreatepage(true)}}>Back</button>
+                onClick={()=>{setUpdatepage(false);setReadpage(true)}}>Back</button>
         </div>
             </>:
             (Deletepage)?

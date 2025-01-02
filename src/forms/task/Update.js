@@ -81,7 +81,10 @@ export let Updatepage1 =(pos)=>{
         </div>
         <div className=' mt-5 row justify-content-center'>
                             <button className='btn btn-outline-success col-3'
-                                onClick={register}>UPDATE</button>
+                                onClick={
+                                
+                                    register}
+                                >UPDATE</button>
                         </div>
         
         </>

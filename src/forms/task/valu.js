@@ -27,7 +27,9 @@ else{
 }   
     if(Validi(obj)&&Chec(obj)){
     std.push(obj);
-    localStorage.setItem("Data",JSON.stringify(std));}
+    localStorage.setItem("Data",JSON.stringify(std));
+    alert(obj.stdName+" successfully Registerd");
+}
     
 }
 export const Listall=()=>{
@@ -178,7 +180,7 @@ export const replace = (data, pos) => {
     }
 std[pos] = data;
     if(Validi(std[pos])&&ChecUp(std[pos],pos)){ 
-        alert(JSON.stringify(std[pos]));
+        alert("successfully updated");
         localStorage.setItem("Data",JSON.stringify(std));}
     // replace
 }
